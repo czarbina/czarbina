@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>farmAnimals</title>
+</head>
+<!-- My incorrect attempt starts 
+<body>
+	<script type="text/javascript">
+		var myFarm = ["chicken", "pigs", "cows", "horses", "ostriches"];
+
+		for (var i = 0; i<5; i++)
+		if (myFarm.charAt(0) === 'c') {
+		console.log(myFarm.charAt(0) === 'c');
+        
+      }
+      else {
+        
+      }
+		
+	</script>
+
+</body>
+</html> -->
+
+<!-- Answer! -->
+
+<body>
+	<!-- Look for items that start with "c" or "o." -->
+	<script type="text/javascript">
+		var myFarm = ["chicken", "pigs", "cows", "horses", "ostriches"];
+
+		for (var i = 0; i<myFarm.length; i++) {
+			console.log(myFarm[i].charAt(0))
+		if (myFarm[i].charAt(0) === "c" || myFarm[i].charAt(0) === "o") {
+		console.log(myFarm[i]);
+        
+      }
+      else {
+        
+      }}
+		
+	</script>
+
+</body>
+</html>

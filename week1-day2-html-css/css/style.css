@@ -1,0 +1,22 @@
+header {
+	background-color: black;
+	color:white;
+	padding: 10px;
+	text-align: center;
+}
+
+#basicInfo {
+	width:60%;
+	float: left;
+	padding: 20px;
+}
+
+#contactInfo {
+	width: 40%;
+	float:left;
+}
+
+p {
+	font-size: 20px;
+	float:left;
+}

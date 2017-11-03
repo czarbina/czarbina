@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Question Game</title>
+  </head>
+  <body>
+
+    <h1>Question Game!</h1>
+
+    <p>Score: <span></span></p>
+
+    <div id="question"></div>
+
+
+    <script>
+
+      // The object questions for our quiz game.
+
+      var score = 0;
+      var qIndex =1;
+
+      var q = "q" + qIndex
+
+      function scoreCounter() {
+        score = score+1;
+      }
+
+      var questions = {
+        q1: ["The sky is blue.", "t"],
+        q2: ["Yellow plus blue makes purple", "f"],
+        q3: ["Enzo is fantastic", "t"],
+        q4: ["Objects are easy", "f"],
+        q5: ["We shall persevere.", "t"]
+      };
+
+      console.log(questions.q1[0]);
+      document.getElementById("question").textContent = questions.[q][0];
+
+      document.onkeyup = function(event) {
+        var userInput = event.key;
+    
+        if (userInput === questions.q1[1]) {
+          score++;
+          alert("Correct!");
+          
+
+          console.log(score);
+
+          } else {
+            (document.write("You lose!"));
+           } 
+
+           qIndex++;
+
+           var newQ = "q" + qIndex;
+           
+      
+      };
+
+    </script>
+    
+  </body>
+</html>
