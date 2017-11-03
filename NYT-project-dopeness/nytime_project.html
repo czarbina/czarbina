@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NY Times Project</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style type="text/css">
+
+#title {
+	width: 900px;
+	border: solid 2px black;
+	margin:auto;
+	margin-bottom: 30px;
+}
+
+#search_form {
+	width: 900px;
+	border: solid 2px black;
+	margin:auto;
+	margin-bottom: 30px;
+}
+
+#results {
+	width: 900px;
+	border: solid 2px black;
+	margin:auto;
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+<div class="container-fluid">
+	<div class="row" id="title">
+		NY TIMES 
+	</div>
+	
+	<div class="row" id="search_form">
+	<form>
+		Search term
+		<input type="text" class="form-control" value="Search Term" id="search_type">
+		Number of results
+		<input type="text" class="form-control" value="Limit - number of results" id="numRes_type">
+		Start Year
+		<input type="text" class="form-control" value="YYYYMMDD" id="startYear_type">
+		End Year (optional)
+		<input type="text" class="form-control" value="YYYYMMDD" id="endYear_type">
+		<button id="search_id" type="search" class="btn btn-default">Search</button>
+		<button id="clear_id" type="clear" class="btn btn-default">Clear</button>
+	</form>
+	</div>
+
+	
+	<div class="row" id="results">
+		RESULTS PLACE HOLDER
+	</div>	
+
+</div>
+<script type="text/javascript">
+$( document ).ready(function() {
+	  var searchTerml;
+      var resultsNum;
+      var startYear;
+      var endYear;
+
+      var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=4182e3db55c5429f9c73ea9f19af658c&q=" + searchTerml + "&begin_date=" + startYear + "&end_date=" + endYear;
+
+     $("#search_id").on("click", function() {
+     	event.preventDefault();
+     	searchTerml = $("#search_type").val();
+      	resultsNum = $("#numRes_type").val();
+      	startYear = $("#startYear_type").val();
+      	endYear = $("#endYear_type").val();
+
+      
+      			console.log(searchTerml);
+      			console.log(resultsNum);
+      			console.log(startYear);
+      			console.log(endYear);
+
+	
+		
+     
+     		$.ajax({
+        		url: queryURL,
+        		method: "GET"
+      		}).done(function(response) {
+
+      			console.log(response);
+      			console.log(searchTerml);
+      			console.log(resultsNum);
+      			console.log(startYear);
+      			console.log(endYear);
+      	});
+  	});
+        // event.preventDefault();
+   });   	
+
+ </script> 
+</body>
+</html>
